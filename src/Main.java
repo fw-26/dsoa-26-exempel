@@ -4,12 +4,13 @@ public class Main {
         System.out.println("hello");
 
         Car car = new Car("VW");
-        Car car2 = new Car("Tesla");
+        Bike bike = new Bike("Scott");
 
-        System.out.println(car.getName());
-        car.setName("Volvo");
-        System.out.println(car.getName());
-        System.out.println(car2.getName());
+        System.out.println(car.getName() + " is " + car.getVehicleType());
+        System.out.println(bike.getName() + " is " + bike.getVehicleType());
+
+
+
 
     }
 
