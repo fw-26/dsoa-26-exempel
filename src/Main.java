@@ -1,49 +1,53 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("hello");
 
-        Shirt shirt = new Shirt(50);
-        Hat hat = new Hat(20);
+        BikeShop bikeShop = new BikeShop();
+        bikeShop.addBike(new Bike("Scott", 500));
+        bikeShop.getBike(0).addSpec("wheel-size", "29 inch");
+        bikeShop.getBike(0).addSpec("suspension", "hardtail");
 
-        System.out.printf("Skortans skick: %d\n", shirt.getCondition());
-        shirt.mend();
-        System.out.printf("Skortans skick: %d\n", shirt.getCondition());
+        System.out.println(bikeShop.getBike(0).getSpecsString());
 
-        hat.mend();
+        bikeShop.addBike(new Bike("Jopo", 200));
+        bikeShop.getBike(1).addSpec("wheel-size", "24 inch");
+        bikeShop.getBike(1).addSpec("suspension", "none");
 
-        Vehicle car = new Car("VW", 12000);
-        Vehicle bike = new Bike("Scott");
-        Car car2 = new Car("Volvo");
-        Vehicle todaysVehicle;
+        bikeShop.addBike(new Bike("Bianchi", 700));
+        bikeShop.getBike(2).addSpec("frame", "carbon");
 
-        //Vehicle boat = new Vehicle("Buster", "båt");
 
-        car.setPrice(10000);
-        System.out.printf("%s kostar %.2f €\n",
+        System.out.println("Välkommen till Bike Shop! Våra cyklar:");
+        for (int i = 0; i < bikeShop.getBikeCount(); i++) {
+            Bike bike = bikeShop.getBike(i);
+            System.out.printf("%s %.2f saldo: %d\n%s",
+                    bike.getName(),
+                    bike.getPrice(),
+                    bike.getStock(),
+                    bike.getSpecsString());
+        }
+
+        System.exit(0);
+
+        Car car = new Car("VW", 12000);
+        Car car2 = new Car("Volvo", 22000);;
+
+        car.refuel(50);
+
+        System.out.printf("%s %s)\n",
                 car.getName(),
-                car.getPrice()
+                car.getFuelInfo());
+
+        car2.refuel(100);
+        System.out.printf("%s %s\n",
+                car2.getName(),
+                car2.getFuelInfo()
         );
 
-        System.out.println(car.getName() + " kostar " + car.getPrice() + " €");
-
-        todaysVehicle = car;
-        System.out.printf("I dag åker jag %s\n", todaysVehicle.getName());
-        todaysVehicle = bike;
-        System.out.printf("I morgon åker jag %s\n", todaysVehicle.getName());
-
-        // overload
-        car2.refuel();
-        car2.refuel(50);
-
-
-        System.out.println(car.getName() + " is " + car.getVehicleType());
-        System.out.println(bike.getName() + " is " + bike.getVehicleType());
+        Vehicle bike = new Bike("Scott");
 
 
 
-        System.out.println(car.getName() + " säger " + car.soundWarning());
-        System.out.println(bike.getName() + " säger " + bike.soundWarning());
 
 
     }

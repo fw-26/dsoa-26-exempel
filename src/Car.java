@@ -1,5 +1,13 @@
 public class Car extends Vehicle {
 
+    // Konstanters värde ändrar ej i runtime
+    static final String VEHICLE_TYPE = "Car";
+
+    // Klassvariabel (fuel för alla bilar)
+    // Alla objekt delar på samma variabel
+    static int totalFuel = 0;
+
+    // Instansvariabel
     private int fuel = 0;
 
     // Overload (överlagring)
@@ -19,12 +27,22 @@ public class Car extends Vehicle {
         return "tut-tut";
     }
 
-    // overload
     public void refuel(int amount) {
         fuel += amount;
-    }
-    public void refuel() {
-        fuel = 100;
+        totalFuel += amount;
     }
 
+    public String getFuelInfo() {
+        return String.format("Fuel %d (total fuel: %d)",
+                getFuel(),
+                getTotalFuel()
+        );
+    }
+
+    public int getFuel() {
+        return fuel;
+    }
+    public int getTotalFuel() {
+        return totalFuel;
+    }
 }

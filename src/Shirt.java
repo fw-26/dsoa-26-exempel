@@ -1,4 +1,4 @@
-public class Shirt extends Clothing {
+public class Shirt extends Clothing implements Shoppable {
 
     Shirt(int condition) {
         super(condition);
@@ -6,5 +6,15 @@ public class Shirt extends Clothing {
 
     void mend() {
         super.condition = 90;
+    }
+
+    @Override
+    public double getPrice() {
+        return 0;
+    }
+
+    @Override
+    public int getStock() {
+        return 0;
     }
 }
