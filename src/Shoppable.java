@@ -6,4 +6,6 @@ public interface Shoppable {
     double getPrice();
 
     int getStock();
+
+    void setStock(int stock);
 }

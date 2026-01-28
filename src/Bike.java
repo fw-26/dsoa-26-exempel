@@ -2,6 +2,8 @@ import java.util.HashMap;
 
 public class Bike extends Vehicle implements Shoppable {
 
+    private int stock = 0;
+
     private HashMap<String,String> specs = new HashMap<>();
 
     public Bike(String name) {
@@ -35,6 +37,13 @@ public class Bike extends Vehicle implements Shoppable {
 
     @Override
     public int getStock() {
-        return 0;
+        return stock;
     }
+
+    @Override
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+
 }
