@@ -30,6 +30,12 @@ public class Bike extends Vehicle implements Shoppable {
         return ret;
     }
 
+    /* flyttad till BikeFactory
+    public static Bike createRandomBike() {
+        return new Bike("aasdasd", 12123);
+    }
+    */
+
     @Override
     public String soundWarning() {
         return "pling-pling";
