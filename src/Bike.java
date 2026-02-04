@@ -2,6 +2,10 @@ import java.util.HashMap;
 
 public class Bike extends Vehicle implements Shoppable {
 
+    /**
+     * This is a bike class
+     */
+
     private int stock = 0;
 
     private HashMap<String,String> specs = new HashMap<>();

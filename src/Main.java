@@ -4,11 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // new CCRandomRundown();
 
-        Utils.hello();
+        System.out.println("Filens innehåll: " + FileUtils.readTextFile("greeting.txt"));
+        FileUtils.writeTextFile("Morjens, hejhej", "greeting.txt");
 
-        //System.exit(0);
+        //int userInteger = Utils.getIntInput("Skriv ett tal: ");
+        //System.out.printf("Tack, du gav heltalet %s\n", userInteger);
+
+        System.exit(0);
 
 
         Scanner textInput = new Scanner(System.in);
