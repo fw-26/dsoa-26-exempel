@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Bike extends Vehicle implements Shoppable {
+public class Bike extends Vehicle implements Shoppable, Serializable {
 
     /**
      * This is a bike class
