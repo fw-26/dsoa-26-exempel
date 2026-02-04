@@ -8,6 +8,7 @@ public class Bike extends Vehicle implements Shoppable, Serializable {
      */
 
     private int stock = 0;
+    DiscountCategory discountCat = DiscountCategory.NEW;
 
     private HashMap<String,String> specs = new HashMap<>();
 
@@ -17,6 +18,11 @@ public class Bike extends Vehicle implements Shoppable, Serializable {
     public Bike(String name, double price) {
         super(name, "pedaled");
         setPrice(price); // anropar superklassens setter
+    }
+    public Bike(String name, double price, DiscountCategory discountCat) {
+        super(name, "pedaled");
+        setPrice(price); // anropar superklassens setter
+        this.discountCat = discountCat;
     }
 
     public void addSpec (String key, String value) {
@@ -42,6 +48,25 @@ public class Bike extends Vehicle implements Shoppable, Serializable {
     */
 
     @Override
+    public double getPrice() {
+        double netPrice;
+        switch (discountCat) {
+            case DEMO:
+                netPrice = getGrossPrice() * 0.9;
+                break;
+            case RETURNED:
+                netPrice = getGrossPrice() * 0.8;
+                break;
+            case USED:
+                netPrice = getGrossPrice() * 0.5;
+                break;
+            default:
+                netPrice = getGrossPrice();
+        }
+        return netPrice;
+    }
+
+    @Override
     public String soundWarning() {
         return "pling-pling";
     }
@@ -56,5 +81,7 @@ public class Bike extends Vehicle implements Shoppable, Serializable {
         this.stock = stock;
     }
 
-
+    public DiscountCategory getDiscountCat() {
+        return discountCat;
+    }
 }

@@ -33,6 +33,10 @@ abstract class Vehicle implements Serializable {
         return price*discount;
     }
 
+    public double getGrossPrice() {
+        return price;
+    }
+
     public void setPrice(double price) {
         if (price < 0) {
             throw new RuntimeException("Price cannot be negative");
