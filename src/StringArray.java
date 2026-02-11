@@ -35,8 +35,16 @@ public class StringArray {
         System.out.printf("Insert %s at %d\n", value, index);
     }
 
+    /**
+     * CC: the reversal
+     */
     public void reverse() {
         // ordnar arrayen i omvänd ordning
+        String[] reverseArray = new String[values.length];
+        for (int i = 0; i < values.length; i++) {
+            reverseArray[i] = values[values.length-i-1];
+        }
+        values = reverseArray;
     }
 
     public String toString() {

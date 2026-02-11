@@ -13,7 +13,8 @@ public class Main {
         System.out.println(names.toString());
         names.insert(4, "Brego");
         System.out.println(names.toString());
-
+        names.reverse();
+        System.out.println(names.toString());
         // new BigO();
 
 
