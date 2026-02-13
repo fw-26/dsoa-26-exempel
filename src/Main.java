@@ -6,6 +6,18 @@ public class Main {
 
         String[] testData = { "Frodo","Samwise","Gandalf","Aragorn","Legolas","Gimli","Boromir","Meriadoc","Peregrin","Arwen","Galadriel","Elrond","Saruman","Gollum","Éowyn","Éomer","Faramir","Théoden","Bilbo","Treebeard","Denethor","Shelob","Radagast","Haldir","Celeborn","Wormtongue" };
 
+        /**
+         * Queue
+         */
+        Queuey q = new Queuey();
+        q.enqueue("Arwen");
+        q.enqueue("Galadriel");
+        q.enqueue("Haldir");
+        System.out.println(q);
+        System.out.println("dequeue: " + q.dequeue());
+        System.out.println(q) ;
+        q.enqueue("Elrond");
+        System.out.println(q);
 
         /**
          * Stack
@@ -36,6 +48,11 @@ public class Main {
         System.out.println(linky.toString());
         System.out.println("Linky size: " + linky.size());
 
+
+        /**
+         * CC Circular Arr-gument
+         */
+        new CCCircularArr();
 
     }
 
