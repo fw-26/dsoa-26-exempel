@@ -14,8 +14,8 @@ public class Main {
             hashy.add(new Person(topNames[i], i));
         }
 
-        //String search = "Mordechai";
-        String search = "Nova";
+        String search = "Mordechai";
+        //String search = "Nova";
 
         int ops = 0;
         String status = "Not found";
