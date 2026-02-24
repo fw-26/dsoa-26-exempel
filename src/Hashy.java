@@ -15,9 +15,33 @@ public class Hashy {
         return ret % hashTable.length;
     }
 
+    public Person find(String name) {
+        int idx = hash(name);
+        int ops = 0;
+
+        // så länge idx inte är det vi söker...
+        while (!hashTable[idx].getName().equals(name)) {
+            idx++;
+            idx %= hashTable.length; // gå till början vid behov
+            ops++;
+
+            if (ops > hashTable.length) {
+                System.out.println("Not found");
+                return null;
+            }
+        }
+        System.out.println("HashTable O(1) ops: " + ops);
+        return hashTable[idx];
+    }
+
     public void add(Person person) {
         int idx = hash(person.getName());
 
+        while (hashTable[idx] != null) {
+            //System.out.println("COLLISION on " + idx );
+            idx++;
+            idx %= hashTable.length; // gå till början vid behov
+        }
         hashTable[idx] = person;
 
     }

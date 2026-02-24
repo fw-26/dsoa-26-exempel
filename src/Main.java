@@ -14,8 +14,8 @@ public class Main {
             hashy.add(new Person(topNames[i], i));
         }
 
-        String search = "Mordechai";
-        //String search = "adasd";
+        //String search = "Mordechai";
+        String search = "Nova";
 
         int ops = 0;
         String status = "Not found";
@@ -28,6 +28,8 @@ public class Main {
         }
         System.out.println(status + " ops (sekventiell sökning): " + ops );
 
+        Person found = hashy.find(search);
+        System.out.println(found.getName() + " has rank " + found.getRank());
 
         /**
          * Grafstruktur
