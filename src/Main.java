@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Scanner;
 
 public class Main {
 
@@ -12,6 +10,13 @@ public class Main {
     public static void main(String[] args) {
 
         // hello(); // StackOverflow!
+
+        // CC countdown
+        Recursy.countdown(10);
+        System.out.println("");
+        // CC
+        System.out.println("pow(4, 2): " + Recursy.pow(4 ,2));
+        System.out.println("pow(4, 4): " + Recursy.pow(4 ,4));
 
         Recursy.loop(0, 10);
         System.out.println("\nfib: " + Recursy.fib(6)); // 1 1 2 3 5 8
